@@ -1,0 +1,84 @@
+
+<html>
+<head>
+<title>Login | Altairs Stock Management Portal | Altairs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"/>
+
+<link rel="stylesheet" href="./app/css/custom.css">
+<link rel="stylesheet" href="./app/css/dashboard/main.cba69814a806ecc7945a.css">
+
+
+<script src="./app/js/jquery.min.js"></script>
+<script src="./app/js/bootstrap.js"></script>
+
+<!--<script src="./js/jquery-3.1.1.minbdbe.js"></script>-->
+
+<script src="./app/lib/angular/angular-1.5.2.min.js"></script>
+<script type="text/js" src="./app/js/app.js"></script>
+<script src="./app/js/modules/home/controllers/logincontroller.js"></script>
+<script src="./app/js/custom.js"></script>
+<script type="text/js" src="./app/lib/angular/angular-cookies.js"></script>
+
+
+<!-- Disable tap highlight on IE -->
+<meta name="msapplication-tap-highlight" content="no">	
+</head>
+<body ng-app="altairs">
+<div class="app-container app-theme-black body-tabs-shadow" ng-controller="LoginController">
+        <div class="app-container">
+            <div class="h-100 bg-plum-plate bg-animation">
+                <div class="d-flex h-100 justify-content-center align-items-center">
+                    <div class="mx-auto app-login-box col-md-8">
+                        <div class="app-logo-inverse mx-auto mb-3 white">
+						<i class="fa fa-cloud fa-2x white"></i> <b>Altairs</b></div>
+                        <div class="modal-dialog w-100 mx-auto">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    
+                                    
+									<div class="h5 modal-title text-center">
+                                        <h4 class="mt-2">
+                                            <div>Welcome back, Admin</div>
+                                            <span><small>Please sign in to your account below.</small></span>
+                                        </h4>
+                                    </div>
+									<form class="" method="POST" action="./loginuser">
+									    <div class="form-row">
+                                            <div class="col-md-12">
+											<label>User ID:</label>
+                                                <div class="position-relative form-group"><input name="altrs_username" id="altrs_username" placeholder="Admin Username" type="text" class="form-control" ng-model="altrs_username">
+												<span>{{error_username}}</span>
+													</div>
+                                            </div>
+                                            <div class="col-md-12">
+											<label>Password:</label>
+                                                <div class="position-relative form-group"><input name="altrs_password" id="altrs_password" placeholder="Your password" type="password" class="form-control" ng-model="altrs_password">
+												<span>{{error_password}}</span>	
+												</div>
+                                            </div>
+                                        </div>
+                                        <div class="position-relative form-check"><input name="check" id="keepLoggedin" type="checkbox" class="form-check-input"><label for="keepLoggedin" class="form-check-label" ng-model="cookieChecker">Keep me logged in</label></div>
+                                    </form>
+									<div class="divider"></div>
+                                     <div class="modal-footer clearfix">
+								<span>{{loginErrorifAny}}</span>
+                                    <div class="float-left"><a href="#/recoverpassword" class="btn-lg btn btn-link">Recover Password</a></div>
+                                    <div class="float-right">
+                                        <button class="btn btn-primary btn-lg" name="loginToDashboard" type="submit" ng-click="submit()">Login to Dashboard</button>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                            </div>
+                        </div>
+                        <div class="text-center text-white opacity-8 mt-3">Copyrights <span>{{year}}</span>. Altairs Systems
+						
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+</body>
+</html>

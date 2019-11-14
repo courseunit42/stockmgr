@@ -1,0 +1,309 @@
+#discovery-page
+{
+    min-height: 100%;
+    padding: 90px 0 139px;
+    background-color: #eff3f6;
+}
+.discovery-landing-layout
+{
+    max-width: 1208px;
+    padding: 200px 16px;
+    margin: 0 auto;
+    position: relative;
+}
+.discovery-landing-layout:after, #discovery-landing-header:after
+{
+    content: '';
+    display: block;
+    clear: both;
+}
+.discovery-landing-white-bg
+{
+    background-color: #fff;
+}
+.discovery-landing h2
+{
+    font-weight: 900;
+    font-size: 35px;
+    color: #292A2B;
+    margin: 0 0 16px;
+    padding: 10px 0;
+    line-height: 44px;
+}
+.discovery-landing p
+{
+    font-size: 18px;
+    line-height: 26px;
+    color: #86939E;
+    margin-bottom: 32px;
+}
+.discovery-landing-list
+{
+    font-weight: 700;
+    line-height: 22px;
+    color: #86939E;
+    padding: 0;
+    margin: 0 0 32px;
+    list-style: none;
+    font-size: 0;
+    overflow: hidden;
+}
+.discovery-landing-list li
+{
+    display: inline-block;
+    min-width: 50%;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+.discovery-landing-list--1column li
+{
+    min-width: 100%;
+}
+.discovery-landing-list .fa-check-circle
+{
+    color: #289155;
+    margin-right: 14px;
+    font-size: 18px;
+    vertical-align: middle;
+    margin-top: -3px;
+}
+
+.discovery-landing-screen-img--wrap
+{
+    float: right;
+    width: 49%;
+    min-width: 288px;
+    background: #FFF;
+    box-shadow: 0 20px 40px rgba(41, 42, 43, 0.05);
+    border-radius: 10px;
+    position: relative;
+    padding: 27px 6px 6px 6px;
+    margin: 32px 0 32px 32px;
+}
+.discovery-landing-screen-img--wrap:after, .discovery-landing-screen-img--wrap:before, .discovery-landing-screen-img--inner:after
+{
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #FF6436;
+}
+.discovery-landing-screen-img--wrap:before
+{
+    margin-left: 19px;
+    background: #FFA51E;
+}
+.discovery-landing-screen-img--inner:after
+{
+    margin-left: 38px;
+    background: #289155;
+}
+.discovery-landing-screen-img--inner
+{
+    background: #EFF3F6;
+    border-radius: 6px;
+    padding: 16px;
+}
+.discovery-landing-white-bg .discovery-landing-screen-img--wrap
+{
+    background: #DEE7ED;
+}
+.discovery-landing-white-bg .discovery-landing-screen-img--inner, .discovery-landing-white-bg .discovery-landing-layout--ico
+{
+    background: #fff;
+}
+.discovery-landing-screen-img
+{
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    margin: 0 auto;
+    padding-top: 58%;
+    max-width: 487px;
+}
+.discovery-landing-screen-img1
+{
+    background-image: url('../img/discovery/landing-img1.png');
+    max-width: 486px;
+}
+.discovery-landing-screen-img2
+{
+    background-image: url('../img/discovery/landing-img2.png');
+}
+.discovery-landing-screen-img3
+{
+    background-image: url('../img/discovery/landing-img3.png');
+    max-width: 561px;
+}
+.discovery-landing-screen-img4
+{
+    background-image: url('../img/discovery/landing-img4.png');
+    max-width: 561px;
+}
+
+
+#discovery-landing-header
+{
+    position: relative;
+    max-width: 1665px;
+    margin: 0 auto;
+}
+#discovery-landing-header--content
+{
+    max-width: 49%;
+    padding-right: 32px;
+    padding-bottom: 32px;
+    min-height: 380px;
+}
+#discovery-landing-header .discovery-landing-layout
+{
+    padding-bottom: 0;
+    padding-top: 6%;
+}
+#discovery-landing-header p
+{
+    overflow: hidden;
+}
+#discovery-landing-corgi
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    min-width: 50%;
+    margin: 0 7% 0 32px;
+}
+#discovery-landing-corgi--bg
+{
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    top: 45px;
+}
+#discovery-landing-corgi--bg:before, #discovery-landing-corgi--bg:after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -50%;
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 50%;
+    background: radial-gradient(386.00px at 50% 50%, rgba(134, 147, 158, 0.09) 0%, rgba(134, 147, 158, 0.13) 100%);
+}
+#discovery-landing-corgi--bg:after
+{
+    background: radial-gradient(289.00px at 50% 50%, rgba(134, 147, 158, 0.09) 0%, rgba(134, 147, 158, 0.13) 100%);
+    width: 75%;
+    padding-top: 75%;
+    top: 25%;
+    left: 62.5%;
+}
+#discovery-landing-corgi--img
+{
+    padding-top: 81.383%;
+    background: url(../img/discovery/corgi.png) 50% 0 no-repeat;
+    background-size: contain;
+    margin: 0 auto -24%;
+    max-width: 567px;
+    position: relative;
+}
+
+.discovery-landing-layout--ico
+{
+    position: absolute;
+    right: 19%;
+    border-radius: 50%;
+    top: -75px;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    color: rgba(134, 147, 158, 0.3);
+    font-size: 70px;
+    background: #EFF3F6;
+    text-align: center;
+}
+
+#discovery-landing-footer
+{
+    padding-top: 107px;
+}
+#discovery-landing-footer p
+{
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#discovery-landing-footer-logo
+{
+    background: linear-gradient(180deg, #FF6436 0%, #E8862B 100%);
+    width: 162px;
+    height: 162px;
+    padding-top: 38px;
+    border-radius: 50%;
+    margin: 0 auto 40px;
+    box-shadow: 0 0 40px 10px rgba(232,134,43,.4);
+}
+
+@media (max-width: 425px)
+{
+    .discovery-landing-screen-img--wrap
+    {
+        float: none;
+        margin-left: 0;
+        margin-right: 0;
+        width: auto;
+    }
+    .discovery-landing-layout--ico {
+        right: 50%;
+        margin-right: -75px;
+    }
+    .discovery-landing-layout
+    {
+        padding: 32px 16px 130px;
+    }
+    #discovery-landing-header .discovery-landing-layout
+    {
+        padding-bottom: 36px;
+    }
+    #discovery-landing-corgi
+    {
+        position: relative;
+        margin: 0 8px;
+    }
+    #discovery-landing-corgi--bg
+    {
+        overflow: visible;
+        top: 60px;
+    }
+    #discovery-landing-corgi--bg:after
+    {
+        top: 15%;
+    }
+    #discovery-landing-corgi--img
+    {
+        padding-top: 100%;
+        margin-bottom: -20px;
+    }
+    .discovery-landing-list li
+    {
+        display: block;
+    }
+    #discovery-page
+    {
+        padding-top: 60px;
+    }
+    #discovery-landing-header--content
+    {
+        max-width: none;
+        padding-right: 0;
+        padding-bottom: 0;
+        min-height: auto;
+    }
+}

@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en" ng-app="altairs">
+
+<head ng-controller="VendorController">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{{pagetitle}} | Admin Dashboard | Altairs Sales & Inventory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"/>
+    <meta name="description" content="Administrators Dashboard of the Altairs Sales and Inventory System">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+<link rel="stylesheet" href="../../app/css/custom.css">
+<link rel="stylesheet" href="../../app/css/dashboard/main.cba69814a806ecc7945a.css">
+
+<script src="../../app/lib/angular/angular-1.5.2.min.js"></script>
+<script src="../../app/js/custom.js"></script>
+<script src="../../app/js/app.js"></script>
+<script src="../../app/lib/angular/angular-cookies.js"></script>
+
+</head>
+
+<body ng-controller="VendorController">
+<div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar">
+    <div class="app-header header-shadow">
+        <div class="app-header__logo">
+            <div class="logo-src"></div>
+            <div class="header__pane ml-auto">
+                <div>
+                    <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="app-header__mobile-menu">
+            <div>
+                <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+        <div class="app-header__menu">
+            <span>
+                <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                    <span class="btn-icon-wrapper">
+                        <i class="fa fa-ellipsis-v fa-w-6"></i>
+                    </span>
+                </button>
+            </span>
+        </div>    <div class="app-header__content">
+            <div class="app-header-left">
+                <div class="search-wrapper">
+                    <div class="input-holder">
+                        <input type="text" class="search-input" placeholder="Type to search">
+                        <button class="search-icon"><span></span></button>
+                    </div>
+                    <button class="close"></button>
+                </div>
+				
+				
+				</div>
+            <div class="app-header-right">
+                <div class="header-dots">
+                    
+                    <div class="dropdown">
+                        <button type="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="p-0 mr-2 btn btn-link">
+                            <span class="icon-wrapper icon-wrapper-alt rounded-circle">
+                                <span class="icon-wrapper-bg bg-danger"></span>
+                                <i class="icon text-danger icon-anim-pulse ion-android-notifications"></i>
+                                <span class="badge badge-dot badge-dot-sm badge-danger">Notifications</span>
+                            </span>
+                        </button>
+                        <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu-xl rm-pointers dropdown-menu dropdown-menu-right">
+                            <div class="dropdown-menu-header mb-0">
+                                <div class="dropdown-menu-header-inner bg-deep-blue">
+                                    <div class="menu-header-image opacity-1" style="background-image: url('assets/images/dropdown-header/city3.jpg');"></div>
+                                    <div class="menu-header-content text-dark">
+                                        <h5 class="menu-header-title">Notifications</h5>
+                                        <h6 class="menu-header-subtitle">You have <b>{{adminMailCount}}</b> unread messages</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="tabs-animated-shadow tabs-animated nav nav-justified tabs-shadow-bordered p-3">
+                                <li class="nav-item">
+                                    <a role="tab" class="nav-link active" data-toggle="tab" href="#tab-messages-header">
+                                        <span>Messages</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a role="tab" class="nav-link" data-toggle="tab" href="#tab-events-header">
+                                        <span>Notifications</span>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab-messages-header" role="tabpanel">
+                                    <div class="scroll-area-sm">
+                                        <div class="scrollbar-container">
+                                            <div class="p-3">
+                                                <div class="notifications-box">
+                                                    <div class="vertical-time-simple vertical-without-time vertical-timeline vertical-timeline--one-column">
+                                                        <div class="vertical-timeline-item dot-danger vertical-timeline-element">
+                                                            <div><span class="vertical-timeline-element-icon bounce-in"></span>
+                                                                <div class="vertical-timeline-element-content bounce-in"><h4 class="timeline-title">{{notification_title}}</h4><span class="vertical-timeline-element-date"></span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="vertical-timeline-item dot-warning vertical-timeline-element">
+                                                            <div><span class="vertical-timeline-element-icon bounce-in"></span>
+                                                                <div class="vertical-timeline-element-content bounce-in"><p>{{notification_body}}</span></p><span class="vertical-timeline-element-date"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                       
+													   
+													   
+													   
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tab-events-header" role="tabpanel">
+                                    <div class="scroll-area-sm">
+                                        <div class="scrollbar-container">
+                                            <div class="p-3">
+                                                <div class="vertical-without-time vertical-timeline vertical-timeline--animate vertical-timeline--one-column">
+                                                   
+													<div class="vertical-timeline-item vertical-timeline-element">
+                                                        <div><span class="vertical-timeline-element-icon bounce-in"><i class="badge badge-dot badge-dot-xl badge-danger"> </i></span>
+                                                            <div class="vertical-timeline-element-content bounce-in"><h4 class="timeline-title">{{notification_title}}</h4>
+                                                                <p>{{notification_body}}</p><span
+                                                                        class="vertical-timeline-element-date"></span></div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <ul class="nav flex-column">
+                                <li class="nav-item-divider nav-item"></li>
+                                <li class="nav-item-btn text-center nav-item">
+                                    <a href="./notifications.html" target="_blank" class="btn-shadow btn-wide btn-pill btn btn-focus btn-sm white">See All Notifications</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="header-btn-lg pr-0">
+                    <div class="widget-content p-0">
+                        <div class="widget-content-wrapper">
+                            <div class="widget-content-left">
+                                <div class="btn-group">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
+                                        <img width="42" class="rounded-circle" src="../../assets/images/avatars/{{avatar}}" alt="">
+                                        <i class="fa fa-angle-down ml-2 opacity-8"></i>
+                                    </a>
+                                    <div tabindex="-1" role="menu" aria-hidden="true" class="rm-pointers dropdown-menu-lg dropdown-menu dropdown-menu-right">
+                                        <div class="dropdown-menu-header">
+                                            <div class="dropdown-menu-header-inner bg-info">
+                                                <div class="menu-header-image opacity-2" style="background-image: url('assets/images/dropdown-header/city3.jpg');"></div>
+                                                <div class="menu-header-content text-left">
+                                                    <div class="widget-content p-0">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left mr-3">
+                                                                <img width="42" class="rounded-circle"
+                                                                     src="../../assets/images/avatars/{{avatar}}"
+                                                                     alt="">
+                                                            </div>
+                                                            <div class="widget-content-left">
+                                                                <div class="widget-heading">{{firstname}} {{lastname}}
+                                                                </div>
+                                                                </div>
+                                                            <div class="widget-content-right mr-2">
+                                                                <a href="../auth/logout" class="btn-pill btn-shadow btn-shine btn btn-focus">Logout
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="scroll-area-xs" style="height: 150px;">
+                                            <div class="scrollbar-container ps">
+                                                <ul class="nav flex-column">
+                                                   <!-- <li class="nav-item-header nav-item">Activity
+                                                    </li>-->
+                                                    <li class="nav-item">
+                                                        <a href="./recoverpassword.html" class="nav-link">Recover Password
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item-header nav-item">My Account
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="./profile-settings.html" class="nav-link">Profile
+                                                            </a>
+                                                    </li>
+													
+													<li class="nav-item">
+                                                        <a href="./system-settings.html" class="nav-link">System Settings
+                                                            </a>
+                                                    </li>
+													
+                                                    <li class="nav-item">
+                                                        <a href="./allmessages.html" class="nav-link">Messages
+                                                            <div class="ml-auto badge badge-warning">{{allmessagecount}}
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="./logs.html" class="nav-link">Logs
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item-divider mb-0 nav-item"></li>
+                                        </ul>
+                                        <div class="grid-menu grid-menu-2col">
+                                            <div class="no-gutters row">
+                                                <div class="col-sm-6">
+                                                    <a href="./notifications.html" class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-warning">
+                                                        <i class="icon-gradient bg-amy-crisp btn-icon-wrapper mb-2 fa fa-comment" arial-hidden="true"></i>
+                                                        Message Inbox
+                                                    </a>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <a href="./support-tickets.html" class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-danger">
+                                                        <i class="icon-gradient bg-love-kiss btn-icon-wrapper mb-2 fa fa-folder-open"></i>
+                                                        <b>Support Tickets</b>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item-divider nav-item">
+                                            </li>
+                                            <li class="nav-item-btn text-center nav-item">
+                                                <a href="./notifications.html" class="btn-wide btn btn-primary btn-sm">
+                                                    Open Messages
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="widget-content-left  ml-3 header-user-info">
+                                <div class="widget-heading">
+                                    {{fname}} {{lname}}
+                                </div>
+                            </div>
+                            <div class="widget-content-right header-user-info ml-3">
+                                <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
+                                    <i class="fa text-white fa-calendar pr-1 pl-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+				<div class="header-btn-lg">
+                   <!-- <button type="button" class="hamburger hamburger--elastic open-right-drawer">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>-->
+                </div>        
+				</div>
+        </div>
+    </div>    
+	
+	<div class="ui-theme-settings">
+        <!--<button type="button" id="TooltipDemo" class="btn-open-options btn btn-warning">
+            <i class="fa fa-cog fa-w-16 fa-spin fa-2x"></i>
+        </button>-->
+		
+        <div class="theme-settings__inner">
+            <div class="scrollbar-container">
+                <div class="theme-settings__options-wrapper">
+                    <div class="p-3">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <div class="widget-content p-0">
+                                    
+									</div>
+                            </li>
+                            <li class="list-group-item">
+                            </li>
+                            <li class="list-group-item">
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+				
+            </div>
+        </div>	
+    </div> 
+	
+	<div class="app-main">
+            <div class="app-sidebar sidebar-shadow">
+                <div class="app-header__logo">
+                    <a href="./"><div class="logo-src"></div></a>
+                    <div class="header__pane ml-auto">
+                        <div>
+                            <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-header__mobile-menu">
+                    <div>
+                        <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="app-header__menu">
+                    <span>
+                        <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                            <span class="btn-icon-wrapper">
+                                <i class="fa fa-ellipsis-v fa-w-6"></i>
+                            </span>
+                        </button>
+                    </span>
+                </div>
+
+				<!--start of sidebar-->
+				
+					<div class="scrollbar-sidebar">
+                    <div class="app-sidebar__inner">
+                        <ul class="vertical-nav-menu">
+                            <li class="app-sidebar__heading">Admin Menu</li>
+                            <li>
+                                <a href="./admin-dashboard.html">
+                                    <i class="fa fa-fw" aria-hidden="true" title="Copy to use list"></i> Dashboard
+                                </a>
+                            </li>                            
+							
+					<li>
+                          <a href="#" class="mm-active">
+                         <i class="fa fa-users"></i>
+                          Vendors
+                       <i class="metismenu-state-icon fa fa-angle-down caret-left"></i>
+                       </a>
+                      <ul>
+
+					<li>
+                    <a href="../dashboard/allvendors.html"> All Vendors
+					</a>
+                    </li>
+                    <li>
+                    
+					<li>
+                    <a href="./createvendor.html" class="mm-active"> New Vendor
+					</a>
+                    </li>
+                    </li>
+					
+					</ul>
+					</li>
+                            
+							<li>
+							<a href="../dashboard/orders.html">
+                                    <i class="fa fa-shopping-bag">
+                                    </i> Orders
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../stockmanager/index.html">
+                                   <i class="fa fa-fw" aria-hidden="true" title="Copy to use file-image-o"></i> Stocks
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../dashboard/sales-dashboard.html">
+                                    <i class="fa fa-fw" aria-hidden="true" title="Copy to use line-chart"></i> Sales
+                                </a>
+                            </li> 
+							
+							<li>
+                                <a href="../dashboard/repots-hub.html">
+                                    <i class="fa fa-fw" aria-hidden="true" title="Copy to use area-chart"></i>
+                                     Report
+                                </a>
+                            </li>
+							
+							<li>
+                                <a href="../dashboard/products.html">
+                                    <i class="ion-android-calendar">
+                                    </i> Product Setup
+                                </a>
+                            </li>
+							
+							<li>
+                                <a href="../dashboard/account-utility.html">
+                                    <i class="ion-android-contacts">
+                                    </i> Account Creation
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+				<!--end of sidebar-->
+				</div>    
+			
+			<div class="app-main__outer">
+                <div class="app-main__inner">
+                    <div class="app-page-title">
+                        <div class="page-title-wrapper">
+                            <div class="page-title-heading">
+                                <div class="page-title-icon">
+									<i class="fa fa-fw" aria-hidden="true"></i>                                    
+									</div>
+                                <div>{{pagetitle}}
+                                    <div class="page-title-subheading">Admin dashboard  for administering vendors, stock, reports and products
+                                    </div>
+                                </div>
+                            </div>
+                            
+							</div>
+                    </div>           
+					
+					
+					<!--start of account creation utility-->
+				<div class="app-page-title">
+				<div class="page-title-wrapper">
+                            <div class="page-title-heading">New Vendor Registration 
+						</div>
+							</div>
+								</div>
+
+					<div class="main-card mb-3 card">
+							<div class="card-body">
+                                    <div id="smartwizard3" class="forms-wizard-vertical">
+                                        <ul class="forms-wizard">
+                                            <li>
+                                                <a href="#step-122">
+                                                    <em>1</em><span>Vendor Information</span>
+                                                </a>
+                                            </li>
+                                            
+                                        </ul>
+                                        <div class="form-wizard-content">
+                                            <div id="step-122">
+                                                <div class="card-body">
+												<form action="" method="POST">
+                                                    <div class="position-relative form-group"><label>Full name</label>
+													<input type="text" placeholder="Vendor's full name" name="vendor_name" ng-model="vendor_name" class="form-control">
+                                                        <div class="invalid-feedback">Name details</div>
+                                                        <small class="form-text text-muted">Full name</small>
+                                                    </div>
+													
+													<div class="position-relative form-group">
+													<label for="">E-mail address</label>
+													<input type="email" placeholder="E-mail address" ng-model="vendoremail" name="email_address" class="form-control">
+                                                        <div class="invalid-feedback">Email address</div>
+                                                        <small class="form-text text-muted">Email address</small>
+                                                    </div>
+													
+													<div class="position-relative form-group">
+													<label for="">Phone number</label>
+													<input type="text" placeholder="Phone number" ng-model="vendorphone" name="phone_numbr" class="form-control">
+                                                        <div class="invalid-feedback">Phone number</div>
+                                                        <small class="form-text text-muted">Phone number</small>
+                                                    </div>
+
+									<div class="position-relative form-group">
+										<label for="">Asset</label>
+											<select class="multiselect-dropdown form-control" name="asset" ng-model="asset">
+                                        <optgroup label="Assets">
+                                            <option value="Stockr">Feed Stocks</option>
+                                            <option value="Bed">Bed</option>
+                                        </optgroup>
+                                        </select>
+									</div>
+													<div class="position-relative form-group">
+													<label for="">Asset ID</label>
+													<input type="text" placeholder="Asset ID" name="asset_id" ng-model="asset_id" class="form-control">
+                                                        <div class="invalid-feedback">Asset ID</div>
+                                                        <small class="form-text text-muted">Asset ID</small>
+                                                    </div>
+													
+													<div class="position-relative form-group">
+													<label for="">Vendor's address</label><textarea placeholder="vendor's full address" name="straddress" class="form-control" ng-model="straddress"></textarea>
+                                                        <div class="invalid-feedback">Residential address/business address</div>
+                                                        <small class="form-text text-muted">Residential address/business address</small>
+                                                    </div>
+													
+                                                                                                             
+												<div class="position-relative form-group">
+												<label>User ID</label><input name="v_username" id="username" placeholder="Userid" type="text" class="form-control" ng-model="userid">
+												<div class="invalid-feedback">Vendor's userid</div>
+												<small class="form-text text-muted">Vendor's userid</small>
+                                    			</div>
+                                                                
+												<div class="position-relative form-group">
+												<label>Password</label>
+												<input name="v_password" id="password" placeholder="Password" type="password" class="form-control" ng-model="password">
+												<div class="invalid-feedback">Login password</div>
+												<small class="form-text text-muted">Login Password</small>
+                                                </div>
+                                                                
+												<div class="position-relative form-group"><label>Confirmation Password</label><input name="confirm_password" id="confirmPassword" placeholder="Confirm password" type="password" class="form-control" ng-model="confirm_password">
+												<div class="invalid-feedback"></div>
+												<small class="form-text text-muted">Confirm password</small>
+                                                </div>
+                                                
+											<div class="divider"></div>
+											<div class="clearfix">
+											<button type="button" id="reset-btn22" class="btn-shadow float-left btn btn-link">Reset</button>
+										<button type="submit" name="saveVendor" ng-click="saveVendorData()" class="btn-shadow btn-wide float-right btn-pill btn-hover-shine btn btn-primary">Submit</button>
+										</div>
+										</form>
+										</div>
+                                        </div>
+                                        </div>
+										</div>
+										</div>
+									
+
+									</div>
+									<!--</div></div></div></div>-->
+       
+		
+		<!--all vendors-->
+					<div class="row">
+                        <div class="col-md-12 col-lg-12 col-xl-12">
+                       <div class="main-card mb-3 card">
+                        <div class="card-header">
+                            <div class="card-header-title font-size-lg text-capitalize font-weight-normal">Recent Vendors</div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="align-middle text-truncate mb-0 table table-borderless table-hover">
+                                <thead>
+                                <tr>
+                                    <th class="text-center"><input type="checkbox" ng-click="selectAll()"/></th>
+                                    <th class="text-center">#</th>
+                                    <th class="text-center">Asset ID</th>
+                                    <th class="text-center">Avatar</th>
+                                    <th class="text-center">Name</th>
+                                    <th class="text-center">Location</th>
+                                    <th class="text-center">Date Added</th>
+                                    <th class="text-center">Phone Number</th>
+                                    <th class="text-center">Details</th>
+                                </tr>
+                                </thead>
+								
+                                <tbody>
+                                <tr ng-repeat="v in allvendors">
+                                    <td class="text-center"><input type="checkbox" ng-model="recordid" value="{{v.recordid}}"/></td>
+                                    <td class="text-center text-muted" style="width: 80px;">#{{v.recordid}}</td>
+                                    <td class="text-center text-muted" style="width: 80px;">#{{v.vendorasset_id}}</td>
+                                    <td class="text-center" style="width: 80px;">
+                                        <img width="40" class="rounded-circle" src="../../../assets/images/avatars/{{v.avatar}}" alt="{{v.firstname}}">
+                                    </td>
+                                    <td class="text-center">{{v.firstname}} {{v.lastname}}</td>
+                                    <td class="text-center"><a href="javascript:void(0)">{{v.locationn}}</a></td>
+                                    <td class="text-center">
+                                        <span class="pr-2 opacity-6">
+                                            <i class="fa fa-business-time"></i>
+                                        </span>
+                                        {{v.dateadded}}
+                                    </td>
+									
+									<td class="text-center">
+                                        <div class="badge badge-pill badge-danger"><a href="tel:{{v.phoneNumber}}" class="white">{{v.phoneNumber}}</a></div>
+                                    </td>
+                                    
+                                    
+                                    <td class="text-center">
+                                        <div role="group" class="btn-group-sm btn-group">
+                                            <a href="javascript:void(0);" data-href="./loadVendorDetails" class="btn-shadow btn btn-primary loadDetails">Details</a>
+                                        </div>
+                                    </td>
+                                </tr>
+								
+                                </tbody>
+                            </table>
+                        </div>
+                       
+                    </div>
+                    </div>
+                    </div>
+									
+<!--end of recent vendors -->
+							
+					<div class="app-footer-right">
+                    <div class="row-fluid text-center"><hr/>
+					<b>Copyrights {{yr}}. Altairs Sales & Inventory</b><Br/>
+		         </div><br/><br/>
+							</div>
+							</div>
+                          
+<div class="app-drawer-overlay d-none animated fadeIn"></div>
+<script type="text/javascript" src="../../app/js/main.cba69814a806ecc7945a.js"></script>
+<script src="../../app/js/modules/dashboard/controllers/vendorcontroller.js"></script>
+
+</body>
+</html>
